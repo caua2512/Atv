@@ -1,0 +1,12 @@
+from ManterClienteUI import ManterClienteUI
+#from ManterServicoUI import ManterServicoUI
+
+class IndexUI:
+    @classmethod
+    def main(cls):
+      #InicioUI.main()
+      #EquacaoUI.main()
+      ManterClienteUI.main()
+      #ManterServicoUI.main()
+
+IndexUI.main()

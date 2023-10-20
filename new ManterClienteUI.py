@@ -39,9 +39,13 @@ class ManterClienteUI:
                 View.cliente_atualizar(option.get_id(), nome, email, fone)
     def excluir():
             st.header("Excluir")
-            option = st.selectbox(
-                'Selecione o cliente que desejar exluir',
-                (View.cliente_listar()))
-            if st.button("Excluir"):
-                View.cliente_excluir(option.get_id())
-
+            clientees = View.cliente_listar
+            if len(clientees) == 0:
+                st.write("Nenhum cliente cadastrado")
+            else:
+                option = st.selectbox('Selecione o cliente que desejar exluir',(View.cliente_listar()))
+                if st.button("Excluir"):
+                    View.cliente_excluir(option.get_id())
+                    st.success("Cliente excluido com sucesso")
+                    time.sleep(2)
+                    st.experimental_rerun()
